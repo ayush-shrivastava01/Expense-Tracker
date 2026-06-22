@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="logo">
+                <i class="fa-solid fa-wallet"></i>
+                <h2>ExpenseTracker</h2>
+            </div>
+
+            <ul class="menu">
+                <li class="active">
+                    <i class="fa-solid fa-house"></i>
+                    Dashboard
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-money-bill-trend-up"></i>
+                    Income
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-money-bill-wave"></i>
+                    Expenses
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Analytics
+                </li>
+            </ul>
+
+            <div class="theme-box">
+                <button id="themeToggle">
+                    <i class="fa-solid fa-moon"></i>
+                    Dark Mode
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <!-- Top Header -->
+            <div class="header">
+
+                <div>
+                    <h1>Expense Dashboard</h1>
+                    <p>Manage your income and expenses</p>
+                </div>
+
+                <div class="search-box">
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search transaction">
+                </div>
+
+            </div>
+
+            <!-- Balance Card -->
+            <section class="balance-card">
+
+                <div>
+                    <p>Total Balance</p>
+                    <h2 id="balance">₹0</h2>
+                </div>
+
+                <i class="fa-solid fa-wallet wallet-icon"></i>
+
+            </section>
+
+            <!-- Income Expense Cards -->
+            <section class="summary-cards">
+
+                <div class="card income-card">
+                    <h3>Income</h3>
+                    <h2 id="income">₹0</h2>
+                </div>
+
+                <div class="card expense-card">
+                    <h3>Expense</h3>
+                    <h2 id="expense">₹0</h2>
+                </div>
+
+            </section>
+
+            <!-- Add Transaction -->
+            <section class="add-section">
+
+                <h2>Add Transaction</h2>
+
+                <form id="transactionForm">
+
+                    <input
+                        type="text"
+                        id="title"
+                        placeholder="Transaction Title"
+                        required>
+
+                    <input
+                        type="number"
+                        id="amount"
+                        placeholder="Amount"
+                        required>
+
+                    <select id="type">
+
+                        <option value="income">
+                            Income
+                        </option>
+
+                        <option value="expense">
+                            Expense
+                        </option>
+
+                    </select>
+
+                    <select id="category">
+
+                        <option value="Salary">
+                            Salary
+                        </option>
+
+                        <option value="Food">
+                            Food
+                        </option>
+
+                        <option value="Shopping">
+                            Shopping
+                        </option>
+
+                        <option value="Travel">
+                            Travel
+                        </option>
+
+                        <option value="Bills">
+                            Bills
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                    <input
+                        type="date"
+                        id="date"
+                        required>
+
+                    <button type="submit">
+                        Add Transaction
+                    </button>
+
+                </form>
+
+            </section>
+
+            <!-- Charts -->
+            <section class="charts-section">
+
+                <div class="chart-card">
+                    <h3>Monthly Statistics</h3>
+                    <canvas id="barChart"></canvas>
+                </div>
+
+                <div class="chart-card">
+                    <h3>Expense Categories</h3>
+                    <canvas id="pieChart"></canvas>
+                </div>
+
+            </section>
+
+            <!-- Transaction History -->
+            <section class="history-section">
+
+                <div class="history-header">
+
+                    <h2>Recent Transactions</h2>
+
+                    <select id="filterType">
+
+                        <option value="all">
+                            All
+                        </option>
+
+                        <option value="income">
+                            Income
+                        </option>
+
+                        <option value="expense">
+                            Expense
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <ul id="transactionList">
+                </ul>
+
+            </section>
+
+        </main>
+
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
